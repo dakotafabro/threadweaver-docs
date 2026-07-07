@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ThreadWeaver | AAIF Ambassador Contribution</title>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bg-card: #141414;
+      --bg-card-hover: #1a1a1a;
+      --border: #262626;
+      --border-hover: #3a3a3a;
+      --text-primary: #f5f5f5;
+      --text-secondary: #a3a3a3;
+      --text-muted: #6b6b6b;
+      --accent: #00ffaa;
+      --accent-dim: rgba(0, 255, 170, 0.15);
+      --accent-hover: rgba(0, 255, 170, 0.35);
+      --warning: #ff6b35;
+      --warning-dim: rgba(255, 107, 53, 0.15);
+      --info: #6ba3ff;
+      --info-dim: rgba(107, 163, 255, 0.15);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+    .container { max-width: 64rem; margin: 0 auto; padding: 0 1.5rem; }
+    nav { padding-top: 1.5rem; padding-bottom: 0.5rem; }
+    nav a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+    nav a:hover { opacity: .8; }
+    main { min-height: 100vh; }
+    .hero { padding-top: 4rem; padding-bottom: 4rem; }
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      margin: 0 0 1.5rem 0;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+    .subtitle { color: var(--text-secondary); }
+    p { color: var(--text-secondary); margin: 0 0 1rem 0; }
+    .links { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .5rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: .5rem;
+      font-size: .875rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: border-color .2s, color .2s;
+    }
+    .chip:hover { border-color: var(--border-hover); color: var(--text-primary); }
+    section { padding: 4rem 0; border-top: 1px solid var(--border); }
+    h2 {
+      margin: 0 0 1.5rem 0;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+    }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media (min-width: 900px) { .grid { grid-template-columns: 1fr 1fr; } }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+    }
+    .card h3 {
+      margin: 0 0 .5rem 0;
+      font-size: .95rem;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    .mono {
+      margin: 0;
+      padding: .75rem;
+      border: 1px solid var(--border-hover);
+      border-radius: .625rem;
+      background: #0f0f12;
+      color: #eafcff;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+      font-size: .86rem;
+      line-height: 1.45;
+    }
+    footer {
+      max-width: 64rem;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .footer-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    @media (min-width: 768px) {
+      .footer-wrap { flex-direction: row; align-items: center; }
+    }
+    .footer-name {
+      font-size: .875rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-name:hover { color: var(--accent); }
+    .footer-sub { font-size: .75rem; color: var(--text-muted); margin-top: .25rem; }
+    .footer-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .footer-links a {
+      font-size: .75rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="container">
+      <nav>
+        <a href="/">DF x AAIF</a>
+      </nav>
+
+      <section class="hero" style="border-top:none;">
+        <p class="eyebrow">AAIF Ambassador</p>
+        <h1>
+          ThreadWeaver<br />
+          <span class="subtitle">Consent-first conversational memory for Goose sessions</span>
+        </h1>
+        <p>
+          ThreadWeaver brings prior thinking into current build sessions with policy-scoped retrieval and project-aware context continuity.
+        </p>
+        <div class="links">
+          <a class="chip" href="https://github.com/dakotafabro/threadweaver" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+          <a class="chip" href="https://www.npmjs.com/package/@threadweaver/cli" target="_blank" rel="noopener noreferrer">@threadweaver/cli</a>
+          <a class="chip" href="https://www.npmjs.com/package/@threadweaver/sdk" target="_blank" rel="noopener noreferrer">@threadweaver/sdk</a>
+          <a class="chip" href="https://aaif.io/blog/goose-doubles-down-on-open-in-latest-two-releases/" target="_blank" rel="noopener noreferrer">AAIF ecosystem context</a>
+        </div>
+      </section>
+
+      <section>
+        <p class="eyebrow">Usage</p>
+        <h2>Goose-First Workflow</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Prompt naturally in session</h3>
+            <p class="mono">I remember thinking in ChatGPT about X.
+Surface my thought and connect it to what we're building on project Y.</p>
+          </article>
+          <article class="card">
+            <h3>ThreadWeaver response model</h3>
+            <p>Intent is inferred, retrieval is policy-governed, and synthesis stays scoped to approved project context.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <p class="eyebrow">Install</p>
+        <h2>Local Setup</h2>
+        <article class="card">
+          <p class="mono">git clone https://github.com/dakotafabro/threadweaver.git
+cd threadweaver
+npm install
+npm run -w @threadweaver/cli dev -- init</p>
+        </article>
+      </section>
+
+      <section>
+        <p class="eyebrow">Design</p>
+        <h2>Core Decisions</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Local-first and consent-first</h3>
+            <p>Memory remains local by default and retrieval is deny-by-default until project access is explicitly granted.</p>
+          </article>
+          <article class="card">
+            <h3>Deterministic policy enforcement</h3>
+            <p>Policy checks are strict regardless of parser path, with traceable decisions for auditability and trust.</p>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="footer-wrap">
+        <div>
+          <a href="https://dakotafabro.dev" target="_blank" rel="noopener noreferrer" class="footer-name">Dakota Fabro, B.Psy, M.Ed, M.Th (they/them)</a>
+          <p class="footer-sub">AAIF Ambassador · Agentic AI Foundation</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://dakotafabro.dev" target="_blank" rel="noopener noreferrer">dakotafabro.dev</a>
+          <a href="https://github.com/dakotafabro" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://linkedin.com/in/dakotafabro" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://aaif.io/" target="_blank" rel="noopener noreferrer">AAIF</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
