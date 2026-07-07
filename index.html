@@ -268,26 +268,25 @@
       <p class="eyebrow">How It Works Today</p>
       <div class="grid two">
         <article class="card">
-          <h2>Import ChatGPT Export</h2>
-          <p>
-            Request and download your export from OpenAI, then connect the unzipped export directory.
-          </p>
+          <h2>Point Goose + ThreadWeaver at Your ChatGPT Export</h2>
+          <ol>
+            <li>Request a ChatGPT export and wait for the download email.</li>
+            <li>Download and unzip the export locally.</li>
+            <li>In Goose, provide the absolute path to the unzipped export directory.</li>
+            <li>Run the ThreadWeaver commands below to connect and index your export data.</li>
+          </ol>
           <p>
             Export instructions: <a href="https://help.openai.com/en/articles/7260999-how-do-i-export-my-chatgpt-history-and-data" target="_blank" rel="noreferrer">How to export ChatGPT history and data</a>
           </p>
-          <pre><code>threadweaver connect chatgpt-export --file /path/to/unzipped-export
-threadweaver projects sync-from-import</code></pre>
+          <pre><code>threadweaver connect chatgpt-export --file /absolute/path/to/chatgpt-export
+threadweaver projects sync-from-import
+threadweaver projects allow --project chatgpt-general --access summary</code></pre>
         </article>
         <article class="card">
-          <h2>Retrieve in Goose</h2>
-          <p>
-            In Goose, ask from intent:
-          </p>
+          <h2>Use It Inside Goose</h2>
+          <p>After setup, ask naturally in Goose to pull prior ideation into the active build flow:</p>
           <pre><code>I remember thinking in ChatGPT about X.
-Surface the relevant thought and connect it to project Y.</code></pre>
-          <p>
-            ThreadWeaver resolves retrieval within policy scope and returns continuity-focused synthesis.
-          </p>
+Surface that prior thinking and connect it to what we are building on project Y.</code></pre>
         </article>
       </div>
     </section>
